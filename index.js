@@ -1,6 +1,6 @@
 'use strict'
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+
 const
     request = require('request'),
     express = require('express'),
@@ -36,7 +36,7 @@ app.post('/webhook', (req, res) => {
 });
 
 app.get('/webhook', (req, res) => {
-
+    const VERIFY_TOKEN = "132832220754195";
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
     let challenge = req.query['hub.challenge'];
